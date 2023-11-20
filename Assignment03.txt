@@ -1,0 +1,84 @@
+
+// assignment
+
+const assign = React.createElement(
+  "div",
+  { id: "title" },
+  React.createElement(
+    "h1",
+    {},
+    React.createElement(
+      "h2",
+      {},
+      React.createElement(
+        "h3",
+        {},
+        "Hello this is assignment 3 using React.createElement"
+      )
+    )
+  )
+);
+
+// using jsx
+
+const usingJsx = (
+  <div id="title">
+    <h1>
+      <h2>
+        <h3>Hello this is assignment 3 using jsx</h3>
+      </h2>
+    </h1>
+  </div>
+);
+
+// using functional component
+
+const UsingFunction = () => {
+  return (
+    <div id="title">
+      <h1>
+        <h2>
+          <h3>Hello this is assignment 3 using Functional component</h3>
+        </h2>
+      </h1>
+    </div>
+  );
+};
+
+// composition of a component
+
+const Component1 = () => {
+  return <h2>This is component 1</h2>;
+};
+
+const Component2 = () => {
+  return (
+    <h2>
+      <Component1 />
+      This is component 2
+    </h2>
+  );
+};
+
+
+Definition of {TitleComponent}
+
+-> This is a react element which can be called inside jsx in curly braces {} for example lets say we have
+
+const TitleComponent = 1000;
+
+const MainComponent = () =>{
+    return (
+        <div>
+        {TitleComponent}
+        <h2>Functional Component</h2>
+        </div>
+    )
+}
+
+Definition of <TitleComponent/>
+
+-> This is a react functional component which can be called/rendered another component 
+
+
+<TitleComponent></TitleComponent> is same as the above.
