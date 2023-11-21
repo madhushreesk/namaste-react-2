@@ -1,31 +1,44 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import twiggitoLogo from "./assets/twiggitoLogo.png";
 
-const reactElem = <span>React Element</span>;
+// component breakdown
+// Header component
+// - logo component, nav bar component
+// Body component
+// - search
+// - RestaurantContainer
+// -- resCard
+// Footer component
+// - copyright, address, links
 
-const reactElem2 = (
-  <h2>
-    {reactElem}
-    React elemet 2
-  </h2>
-);
-
-const Title2 = () => {
-  return <h2>Playing with my code</h2>;
-};
-
-const Title = () => {
-  return <h2>Namaste React with jsx 🚀</h2>;
-};
-const HeadingComponent = () => {
+const Header = () => {
   return (
-    <div>
-      {Title2}
-      <h2>Namaste React this is a functional component</h2>
+    <div className="header">
+      <div className="logo-container">
+        <img className="logo" src={twiggitoLogo} alt="twiggito logo" />
+      </div>
+
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
     </div>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeadingComponent />);
+root.render(<AppLayout />);
