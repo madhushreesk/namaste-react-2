@@ -40,19 +40,16 @@ const RestaurantCard = (props) => {
 
   console.log(resData);
 
-  const cuisineList = resData?.cuisines.map((cuisine, index) => (
-    <h4 key={index}>{cuisine}</h4>
-  ));
   return (
     <div className="res-card">
       <img
         className="res-logo"
-        src="https://images.theconversation.com/files/368263/original/file-20201109-22-lqiq5c.jpg?ixlib=rb-1.1.0&rect=10%2C0%2C6699%2C4476&q=45&auto=format&w=926&fit=clip"
+        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${resData?.cloudinaryImageId}`}
         alt="res-logo"
       />
       <h3>{resData?.name}</h3>
       <h4>{resData?.sla?.deliveryTime}</h4>
-      <div className="cuisine-list">{cuisineList}</div>
+      <h4>{resData?.cuisines?.join(", ")}</h4>
       <h4>{resData?.avgRating}</h4>
       <h4>{resData?.costForTwo}</h4>
     </div>
