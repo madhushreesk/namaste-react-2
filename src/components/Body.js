@@ -1,44 +1,15 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
+import { useState } from "react";
 
 const Body = () => {
-  let listOfRestaurant = [
-    {
-      id: "241727",
-      name: "Namaste",
-      cloudinaryImageId: "dtcwa1rxdskp3crqvpr3",
-      costForTwo: "₹100 for two",
-      cuisines: [
-        "South Indian",
-        "Thalis",
-        "Biryani",
-        "Desserts",
-        "Beverages",
-        "Indian",
-      ],
-      avgRating: 3.8,
-      parentId: "366271",
-      avgRatingString: "4.1",
-      totalRatingsString: "10K+",
-    },
-    {
-      id: "241027",
-      name: "Dominos",
-      cloudinaryImageId: "dtcwa1rxdskp3crqvpr3",
-      costForTwo: "₹100 for two",
-      cuisines: ["South Indian", "Thalis", "Beverages", "Indian"],
-      avgRating: 4.1,
-      parentId: "366271",
-      avgRatingString: "4.1",
-      totalRatingsString: "10K+",
-    },
-  ];
+  const [listOfRestaurant, setListOfRestaurant] = useState(resList);
 
   const TopRated = () => {
     const topRatedRestaurants = listOfRestaurant.filter(
       (res) => res.avgRating > 4
     );
-    return topRatedRestaurants;
+    setListOfRestaurant(topRatedRestaurants);
   };
 
   return (

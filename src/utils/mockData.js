@@ -98,7 +98,7 @@ const resList = [
     areaName: "Koramangala",
     costForTwo: "₹400 for two",
     cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
-    avgRating: 4.3,
+    avgRating: 2.3,
     feeDetails: {
       restaurantId: "23678",
       fees: [
@@ -190,7 +190,7 @@ const resList = [
     areaName: "Koramangala",
     costForTwo: "₹300 for two",
     cuisines: ["South Indian", "North Indian", "Sweets", "Chinese"],
-    avgRating: 4.2,
+    avgRating: 3.2,
     veg: true,
     feeDetails: {
       restaurantId: "305",
@@ -279,7 +279,7 @@ const resList = [
     areaName: "Koramangala",
     costForTwo: "₹400 for two",
     cuisines: ["Pizzas", "Italian", "Pastas", "Desserts"],
-    avgRating: 4.3,
+    avgRating: 3.7,
     feeDetails: {
       restaurantId: "108424",
       fees: [
@@ -374,7 +374,7 @@ const resList = [
       "Punjabi",
       "Raja",
     ],
-    avgRating: 4.4,
+    avgRating: 2.4,
     feeDetails: {
       restaurantId: "19563",
       fees: [
@@ -470,7 +470,7 @@ const resList = [
       "Beverages",
       "Indian",
     ],
-    avgRating: 4.1,
+    avgRating: 3.9,
     veg: true,
     feeDetails: {
       restaurantId: "241027",
