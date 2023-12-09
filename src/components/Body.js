@@ -1,8 +1,11 @@
+import CarouselBody from "./CarouselBody";
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
+  const [carouselImages, setCarouselImages] = useState([]);
 
   const TopRated = () => {
     const topRatedRestaurants = listOfRestaurant.filter(
@@ -22,10 +25,21 @@ const Body = () => {
 
     const json = await data.json();
 
+    setCarouselImages(json?.data?.cards[0]?.card?.card?.imageGridCards?.info);
+
+    // console.log(
+    //   "CarouselBody",
+    //   json?.data?.cards[0]?.card?.card?.imageGridCards?.info
+    // );
+
     setListOfRestaurant(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  if (listOfRestaurant.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div className="body">
@@ -33,6 +47,11 @@ const Body = () => {
         <button className="filter-btn" onClick={() => TopRated()}>
           Top Rated Restaurants
         </button>
+      </div>
+      <div className="carousel-images">
+        {carouselImages.map((img) => {
+          <CarouselBody key={img.id} carousel={carouselImages} />;
+        })}
       </div>
       <div className="res-container">
         {listOfRestaurant.map((resData) => (
