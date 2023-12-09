@@ -1,20 +1,18 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 
 const Body = () => {
-  const [listOfRestaurant, setListOfRestaurant] = useState(resList);
+  const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
   const TopRated = () => {
     const topRatedRestaurants = listOfRestaurant.filter(
-      (res) => res.avgRating > 4
+      (res) => res.info.avgRating > 4
     );
     setListOfRestaurant(topRatedRestaurants);
   };
 
   useEffect(() => {
     fetchData();
-    console.log("useEffect called");
   }, []);
 
   const fetchData = async () => {
@@ -23,7 +21,10 @@ const Body = () => {
     );
 
     const json = await data.json();
-    console.log(json);
+
+    setListOfRestaurant(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   return (
