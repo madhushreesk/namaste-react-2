@@ -49,6 +49,17 @@
 .filter-btn{
     margin: 10px;
     cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #ED2939; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.filter-btn:hover{
+    background-color: #D2122E;
 }
 
 .shimmer-container{
@@ -56,8 +67,24 @@
     flex-wrap: wrap;
 }
 
+.search-shimmer{
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 5px;
+    width: 350px;
+    height: 20px;
+    background-color: #f0f0f0;
+}
+.top-rated-shimmer{
+    margin: 20px 0 10px 10px;
+    padding: 5px;
+    width: 250px;
+    height: 20px;
+    background-color: #f0f0f0;
+}
+
 .shimmer-card{
-    margin: 5px;
+    margin: 8px;
     padding: 5px;
     width: 200px;
     height: 350px;
@@ -81,3 +108,34 @@
     padding: 0 20px;
     cursor: pointer;
 }
+
+.search {
+    display: flex;
+    align-items: center;
+}
+  
+.search-box {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 200px;
+  }
+  
+  .search-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #ED2939; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .search-button:hover {
+    background-color: #D2122E; 
+    border: none;
+  }
+  
