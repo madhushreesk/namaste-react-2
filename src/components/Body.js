@@ -37,11 +37,9 @@ const Body = () => {
     );
   };
 
-  if (listOfRestaurant.length === 0) {
-    return <Shimmer />;
-  }
-
-  return (
+  return listOfRestaurant.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button className="filter-btn" onClick={() => TopRated()}>

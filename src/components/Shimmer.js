@@ -19,11 +19,139 @@ const Shimmer = () => {
         <div className="shimmer-res-info"></div>
         <div className="shimmer-res-info"></div>
       </div>
-      <div className="shimmer-card">Cards</div>
-      <div className="shimmer-card">Cards</div>
-      <div className="shimmer-card">Cards</div>
-      <div className="shimmer-card">Cards</div>
-      <div className="shimmer-card">Cards</div>
+
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+      <div className="shimmer-card">
+        <div className="shimmer-image"></div>
+
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+        <div className="shimmer-res-info"></div>
+      </div>
+
       <div className="shimmer-card"></div>
     </div>
   );
