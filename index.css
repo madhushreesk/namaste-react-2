@@ -48,9 +48,6 @@
     cursor: pointer;
 }
 
-
-
-
 .search {
     padding: 10px;
 }
@@ -97,7 +94,7 @@
 
 .shimmer-card{
     margin: 8px;
-    padding: 5px;
+    padding: 8px;
     width: 200px;
     height: 350px;
     background-color: #f0f0f0;

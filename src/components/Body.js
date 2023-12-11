@@ -31,6 +31,8 @@ const Body = () => {
 
     setOriginalListOfRestaurant(restaurants);
     setListOfRestaurant(restaurants);
+
+    console.log(restaurants);
   };
 
   return listOfRestaurant.length === 0 ? (
