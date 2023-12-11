@@ -133,6 +133,18 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
+
+  .clear-button{
+    padding: 10px 15px;
+    margin-left: 10px;
+    font-size: 16px;
+    background-color: #ED2939; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
   
   .search-button:hover {
     background-color: #D2122E; 

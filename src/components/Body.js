@@ -4,11 +4,12 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   // whenever state variable changes, react triggers a reconciliation cycle(re-renders the component)
+  const [originalListOfRestaurant, setOriginalListOfRestaurant] = useState([]);
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   const TopRated = () => {
-    const topRatedRestaurants = listOfRestaurant.filter(
+    const topRatedRestaurants = originalListOfRestaurant.filter(
       (res) => res.info.avgRating > 4
     );
     setListOfRestaurant(topRatedRestaurants);
@@ -20,16 +21,16 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
+    const restaurants =
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || [];
 
-    console.log(json);
-
-    setListOfRestaurant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    setOriginalListOfRestaurant(restaurants);
+    setListOfRestaurant(restaurants);
   };
 
   return listOfRestaurant.length === 0 ? (
@@ -48,13 +49,23 @@ const Body = () => {
           <button
             className="search-button"
             onClick={() => {
-              const filteredSearch = listOfRestaurant.filter((res) =>
+              const filteredSearch = originalListOfRestaurant.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setListOfRestaurant(filteredSearch);
             }}
           >
             Search
+          </button>
+
+          <button
+            className="clear-button"
+            onClick={() => {
+              setListOfRestaurant(originalListOfRestaurant);
+              setSearchText("");
+            }}
+          >
+            Clear
           </button>
         </div>
         <button className="filter-btn" onClick={() => TopRated()}>
@@ -64,7 +75,7 @@ const Body = () => {
 
       <div className="res-container">
         {listOfRestaurant.map((resData) => (
-          <RestaurantCard key={resData.id} resData={resData} />
+          <RestaurantCard key={resData.info.id} resData={resData} />
         ))}
       </div>
     </div>
