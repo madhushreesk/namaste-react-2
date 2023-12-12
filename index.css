@@ -159,4 +159,22 @@
     background-color: #D2122E; 
     border: none;
   }
+
+  .menuImage{
+    width: 200px;
+  }
+
+  .noDecoration {
+    text-decoration: none;
+    color: #000; 
+  }
+  
+  .noDecoration:visited {
+    color: #000; 
+  }
+  
+  .noDecoration:hover {
+    color: #000; 
+  }
+  
   

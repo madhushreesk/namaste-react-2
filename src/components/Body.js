@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   // whenever state variable changes, react triggers a reconciliation cycle(re-renders the component)
@@ -32,7 +33,7 @@ const Body = () => {
     setOriginalListOfRestaurant(restaurants);
     setListOfRestaurant(restaurants);
 
-    console.log(restaurants);
+    console.log("Res data", restaurants);
   };
 
   return listOfRestaurant.length === 0 ? (
@@ -77,7 +78,13 @@ const Body = () => {
 
       <div className="res-container">
         {listOfRestaurant.map((resData) => (
-          <RestaurantCard key={resData.info.id} resData={resData} />
+          <Link
+            key={resData.info.id}
+            to={"/restaurants/" + resData.info.id}
+            className="noDecoration"
+          >
+            <RestaurantCard resData={resData} />
+          </Link>
         ))}
       </div>
     </div>
