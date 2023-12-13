@@ -11,13 +11,10 @@ const RestaurantMenu = () => {
 
   const { resId } = useParams();
 
-  // console.log(params);
-
   const fetchMenu = async () => {
     const data = await fetch(MENU_API + resId);
 
     const json = await data.json();
-    console.log("res data menu", json);
 
     setResInfo(json.data);
   };
@@ -39,15 +36,19 @@ const RestaurantMenu = () => {
         {cuisines.join(", ")} - {costForTwoMessage}
       </p>
       <img className="menuImage" src={CDN_IMAGE_URL + cloudinaryImageId} />
-      <h2>Menu</h2>
-      <ul>
-        {itemCards?.map((item) => (
-          <li key={item.id}>
-            {item?.card?.info?.name} - {"Rs."}
-            {item?.card?.info?.price / 100}
-          </li>
-        ))}
-      </ul>
+      {itemCards && (
+        <div>
+          <h2>Menu</h2>
+          <ul>
+            {itemCards?.map((item) => (
+              <li key={item.id}>
+                {item?.card?.info?.name} - {"Rs."}
+                {item?.card?.info?.price / 100}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

@@ -7,19 +7,30 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img className="logo" src={twiggitoLogo} alt="twiggito logo" />
+        <Link to="/">
+          <img className="logo" src={twiggitoLogo} alt="twiggito logo" />
+        </Link>
       </div>
 
       <div className="nav-items">
         <ul>
           <li>
-            <Link to="/"> Home</Link>
+            <Link style={{ textDecoration: "none", color: "#000" }} to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/about">About Us</Link>
+            <Link style={{ textDecoration: "none", color: "#000" }} to="/about">
+              About Us
+            </Link>
           </li>
           <li>
-            <Link to="/contact"> Contact Us</Link>
+            <Link
+              style={{ textDecoration: "none", color: "#000" }}
+              to="/contact"
+            >
+              Contact Us
+            </Link>
           </li>
           <li>Cart</li>
           <button
