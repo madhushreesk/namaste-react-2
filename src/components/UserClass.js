@@ -13,7 +13,7 @@ class UserClass extends React.Component {
   }
 
   async componentDidMount() {
-    //console.log(this.props.name + " child component did mount");
+    console.log("component did mount");
 
     const data = await fetch("https://api.github.com/users/madhushreesk");
 
@@ -25,11 +25,19 @@ class UserClass extends React.Component {
     });
   }
 
+  componentDidUpdate() {
+    console.log("component did update");
+  }
+
+  componentWillUnmount() {
+    console.log("component unmounted");
+  }
+
   render() {
     return (
       <div className="user-card">
         <h1>This is class Component</h1>
-
+        <img src={this.state.userInfo.avatar_url} />
         <h2>Name : {this.state.userInfo.name}</h2>
         <h2>Role : {this.state.userInfo.bio}</h2>
         <h2>Company : {this.state.userInfo.company}</h2>

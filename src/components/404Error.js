@@ -1,4 +1,4 @@
-import { useRouteError } from "react-router-dom";
+import { Link, useRouteError } from "react-router-dom";
 import React from "react";
 
 const Error404 = () => {
@@ -10,7 +10,9 @@ const Error404 = () => {
       <h2>
         {err.status} - {err.data}
       </h2>
-      <button>Go back to homepage</button>
+      <Link to="/" className="noDecoration">
+        <button>Go back to homepage</button>
+      </Link>
     </div>
   );
 };
