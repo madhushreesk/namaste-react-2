@@ -36,6 +36,14 @@ const Header = () => {
               Contact Us
             </Link>
           </li>
+          <li>
+            <Link
+              style={{ textDecoration: "none", color: "#000" }}
+              to="/grocery"
+            >
+              Grocery
+            </Link>
+          </li>
           <li>Cart</li>
           <button
             className="login-button"
