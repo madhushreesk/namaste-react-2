@@ -2,6 +2,8 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { SWIGGY_RESTAURANT_API } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   // whenever state variable changes, react triggers a reconciliation cycle(re-renders the component)
@@ -21,9 +23,7 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(SWIGGY_RESTAURANT_API);
 
     const json = await data.json();
     const restaurants =
@@ -35,6 +35,15 @@ const Body = () => {
 
     // console.log("Res data", restaurants);
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you're offline!! Please check your internet connection;
+      </h1>
+    );
 
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
@@ -73,6 +82,9 @@ const Body = () => {
         </div>
         <button className="filter-btn" onClick={() => TopRated()}>
           Top Rated Restaurants
+        </button>
+        <button className="filter-btn">
+          Total Restaurants : {listOfRestaurant.length}
         </button>
       </div>
 

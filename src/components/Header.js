@@ -1,9 +1,12 @@
 import { useState } from "react";
 import twiggitoLogo from "../assets/twiggitoLogo.png";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const [login, setLogin] = useState("Login");
+
+  const onlineStatus = useOnlineStatus();
   return (
     <div className="header">
       <div className="logo-container">
@@ -14,6 +17,7 @@ const Header = () => {
 
       <div className="nav-items">
         <ul>
+          <li>Online Status : {onlineStatus ? "✅" : "🔴"} </li>
           <li>
             <Link style={{ textDecoration: "none", color: "#000" }} to="/">
               Home

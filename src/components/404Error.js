@@ -11,7 +11,7 @@ const Error404 = () => {
         {err.status} - {err.data}
       </h2>
       <Link to="/" className="noDecoration">
-        <button>Go back to homepage</button>
+        <button className="filter-btn">Go back to homepage</button>
       </Link>
     </div>
   );

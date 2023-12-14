@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Shimmer from "./Shimmer";
-import { CDN_IMAGE_URL, MENU_API } from "../utils/constants";
+import { CDN_IMAGE_URL } from "../utils/constants";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
