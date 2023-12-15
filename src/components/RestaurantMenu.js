@@ -17,9 +17,6 @@ const RestaurantMenu = () => {
   const { name, cuisines, costForTwoMessage, city, locality, areaName } =
     resInfo?.cards[0]?.card?.card?.info;
 
-  const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-
   // console.log(
   //   "card",
   //   resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
@@ -31,8 +28,6 @@ const RestaurantMenu = () => {
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-
-  console.log("categoriess", categories);
 
   return (
     <div className=" flex justify-center flex-col mt-4">
@@ -49,31 +44,12 @@ const RestaurantMenu = () => {
 
       {categories.map((category) => {
         return (
-          <div>
-            <RestaurantCategory data={category?.card?.card} />
-          </div>
+          <RestaurantCategory
+            key={category?.card?.card?.name}
+            data={category?.card?.card}
+          />
         );
       })}
-
-      {/* {itemCards ? (
-        <div>
-          <div>
-            <ul>
-              {itemCards?.map((item) => (
-                <div>
-                  <li  key={item.id}>
-                    {item?.card?.info?.name} - {"Rs."}
-                    {item?.card?.info?.price / 100 ||
-                      item?.card?.info?.defaultPrice / 100}
-                  </li>
-                </div>
-              ))}
-            </ul>
-          </div>
-        </div>
-      ) : (
-        <div className="font-bold">No Menu Found !!!</div>
-      )} */}
     </div>
   );
 };
