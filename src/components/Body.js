@@ -22,6 +22,8 @@ const Body = () => {
     fetchData();
   }, []);
 
+  console.log("list", listOfRestaurant);
+
   const fetchData = async () => {
     const data = await fetch(SWIGGY_RESTAURANT_API);
 
