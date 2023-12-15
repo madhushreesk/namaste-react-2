@@ -50,7 +50,7 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="search">
+        <div className="p-3">
           <input
             className="search-box"
             type="text"
@@ -59,7 +59,7 @@ const Body = () => {
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
-            className="search-button"
+            className="bg-red-600 px-2 py-4 m-2"
             onClick={() => {
               const filteredSearch = originalListOfRestaurant.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -71,7 +71,7 @@ const Body = () => {
           </button>
 
           <button
-            className="clear-button"
+            className="bg-red-600 px-2 py-4 m-3"
             onClick={() => {
               setListOfRestaurant(originalListOfRestaurant);
               setSearchText("");
@@ -80,15 +80,15 @@ const Body = () => {
             Clear
           </button>
         </div>
-        <button className="filter-btn" onClick={() => TopRated()}>
+        <button className="bg-red-600 px-2 py-4 m-3" onClick={() => TopRated()}>
           Top Rated Restaurants
         </button>
-        <button className="filter-btn">
+        <button className="bg-red-600 px-2 py-4 ">
           Total Restaurants : {listOfRestaurant.length}
         </button>
       </div>
 
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {listOfRestaurant.map((resData) => (
           <Link
             key={resData.info.id}

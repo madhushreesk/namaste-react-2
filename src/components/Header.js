@@ -8,27 +8,29 @@ const Header = () => {
 
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex justify-between items-center p-15 bg-white shadow-md transition-shadow duration-300 ease-linear hover:shadow-lg">
       <div className="logo-container">
         <Link to="/">
-          <img className="logo" src={twiggitoLogo} alt="twiggito logo" />
+          <img className="m-10 w-52" src={twiggitoLogo} alt="twiggito logo" />
         </Link>
       </div>
 
-      <div className="nav-items">
-        <ul>
-          <li>Online Status : {onlineStatus ? "✅" : "🔴"} </li>
-          <li>
+      <div className="flex items-center">
+        <ul className="flex p-5 m-4">
+          <li className="px-3">
+            Online Status : {onlineStatus ? "✅" : "🔴"}{" "}
+          </li>
+          <li className="px-3">
             <Link style={{ textDecoration: "none", color: "#000" }} to="/">
               Home
             </Link>
           </li>
-          <li>
+          <li className="px-3">
             <Link style={{ textDecoration: "none", color: "#000" }} to="/about">
               About Us
             </Link>
           </li>
-          <li>
+          <li className="px-3">
             <Link
               style={{ textDecoration: "none", color: "#000" }}
               to="/contact"
@@ -36,7 +38,7 @@ const Header = () => {
               Contact Us
             </Link>
           </li>
-          <li>
+          <li className="px-3">
             <Link
               style={{ textDecoration: "none", color: "#000" }}
               to="/grocery"
@@ -44,7 +46,7 @@ const Header = () => {
               Grocery
             </Link>
           </li>
-          <li>Cart</li>
+          <li className="px-3">Cart</li>
           <button
             className="login-button"
             onClick={() => {
