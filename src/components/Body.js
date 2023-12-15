@@ -59,7 +59,7 @@ const Body = () => {
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
-            className="bg-red-600 px-2 py-4 m-2"
+            className="bg-red-600 px-1 py-3 m-2 rounded-lg hover:bg-red-500 text-white"
             onClick={() => {
               const filteredSearch = originalListOfRestaurant.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -71,7 +71,7 @@ const Body = () => {
           </button>
 
           <button
-            className="bg-red-600 px-2 py-4 m-3"
+            className="bg-red-600 px-1 py-3 m-2 rounded-lg hover:bg-red-500 text-white"
             onClick={() => {
               setListOfRestaurant(originalListOfRestaurant);
               setSearchText("");
@@ -80,10 +80,13 @@ const Body = () => {
             Clear
           </button>
         </div>
-        <button className="bg-red-600 px-2 py-4 m-3" onClick={() => TopRated()}>
+        <button
+          className="bg-red-600 px-2 py-4 ml-5 rounded-lg hover:bg-red-500 text-white"
+          onClick={() => TopRated()}
+        >
           Top Rated Restaurants
         </button>
-        <button className="bg-red-600 px-2 py-4 ">
+        <button className="bg-red-600 px-2 py-4 ml-5 rounded-lg hover:bg-red-500 text-white">
           Total Restaurants : {listOfRestaurant.length}
         </button>
       </div>

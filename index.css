@@ -4,44 +4,13 @@
 
 
 
-/* .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    padding: 15px; 
-    background-color: #ffffff; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    transition: box-shadow 0.3s ease; 
-}
+/* 
 .header:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
-.logo{
-    width: 200px;
-    padding: 25px;
-}
-.nav-items > ul{
-    display: flex;
-    padding: 0px 20px;
-    font-size: 20px;
-    list-style-type: none;
-}
 
-.nav-items > ul > li {
-    padding: 10px;
-    margin: 10px;
-}
-.res-container{
-    display: flex;
-    flex-wrap: wrap;
-}
-.res-card {
-    margin: 5px;
-    padding: 10px;
-    width: 200px;
-    background-color: #f0f0f0;
-    transition: box-shadow 0.3s ease, transform 0.3s ease; 
-}
+
+
 .res-card:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     transform: scale(1.08);
@@ -70,47 +39,8 @@
     background-color: #D2122E;
 }
 
-.shimmer-container{
-    display: flex;
-    flex-wrap: wrap;
-}
 
-.search-shimmer{
-    margin-top: 20px;
-    margin-left: 10px;
-    padding: 5px;
-    width: 350px;
-    height: 20px;
-    background-color: #f0f0f0;
-}
-.top-rated-shimmer{
-    margin: 20px 0 10px 10px;
-    padding: 5px;
-    width: 250px;
-    height: 20px;
-    background-color: #f0f0f0;
-}
 
-.shimmer-card{
-    margin: 8px;
-    padding: 8px;
-    width: 200px;
-    height: 350px;
-    background-color: #f0f0f0;
-}
-.shimmer-image{
-    width: 100%;
-    max-height: 150px;
-    height: 180px;
-    background-color: #fff
-}
-
-.shimmer-res-info{
-    width: 100%;
-    height: 18px;
-    margin-top: 10px;
-    background-color: #fff
-}
 
 .login-button{
     padding: 0 20px;
