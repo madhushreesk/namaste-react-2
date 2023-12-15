@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withBestSellerLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -38,6 +38,8 @@ const Body = () => {
     // console.log("Res data", restaurants);
   };
 
+  const RestaurantBestSeller = withBestSellerLabel(RestaurantCard);
+
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false)
@@ -52,7 +54,7 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="p-3">
+        <div className="p-3 ml-4">
           <input
             className="search-box"
             type="text"
@@ -100,7 +102,11 @@ const Body = () => {
             to={"/restaurants/" + resData.info.id}
             className="noDecoration"
           >
-            <RestaurantCard resData={resData} />
+            {resData.info.avgRating > 4.2 ? (
+              <RestaurantBestSeller resData={resData} />
+            ) : (
+              <RestaurantCard resData={resData} />
+            )}
           </Link>
         ))}
       </div>

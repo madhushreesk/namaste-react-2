@@ -1,6 +1,4 @@
 import React from "react";
-import Shimmer from "./Shimmer";
-import { CDN_IMAGE_URL } from "../utils/constants";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import MenuShimmer from "./MenuShimmer";
@@ -9,13 +7,13 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
 
   const resInfo = useRestaurantMenu(resId);
-  // console.log("Hook data", resInfo);
+  console.log("Hook data", resInfo);
 
   if (resInfo === null) {
     return <MenuShimmer />;
   }
 
-  const { name, cuisines, costForTwoMessage, cloudinaryImageId } =
+  const { name, cuisines, costForTwoMessage, city, locality, areaName } =
     resInfo?.cards[0]?.card?.card?.info;
 
   const { itemCards } =
@@ -23,26 +21,33 @@ const RestaurantMenu = () => {
 
   return (
     <div className=" flex justify-center items-center flex-col mt-4">
-      <div className="flex flex-col items-start">
-        <h1>{name}</h1>
-        <p>{cuisines.join(", ")}</p>
+      <div className="flex flex-col">
+        <div className="font-bold text-xl">{name}</div>
+
+        <div>
+          {cuisines.join(", ")} - {costForTwoMessage}
+        </div>
+        <div>{(locality || areaName, city)}</div>
       </div>
 
-      <div className="bg-gray-300 h-[2px] w-[420px]"></div>
+      <div className="bg-gray-300 h-[2px] w-[420px] mt-3"></div>
 
-      {itemCards && (
+      {itemCards ? (
         <div>
           <div>
             <ul>
               {itemCards?.map((item) => (
-                <li className="bg-gray-200 m-4 p-4" key={item.id}>
+                <li className="bg-gray-200 m-4 p-4 w-[420px]" key={item.id}>
                   {item?.card?.info?.name} - {"Rs."}
-                  {item?.card?.info?.price / 100}
+                  {item?.card?.info?.price / 100 ||
+                    item?.card?.info?.defaultPrice / 100}
                 </li>
               ))}
             </ul>
           </div>
         </div>
+      ) : (
+        <div className="font-bold">No Menu Found !!!</div>
       )}
     </div>
   );

@@ -3,8 +3,8 @@ import { CDN_IMAGE_URL } from "../utils/constants";
 const RestaurantCard = (props) => {
   const { resData } = props;
 
-  const { name, cuisines, avgRating, locality, cloudinaryImageId, costForTwo } =
-    resData.info;
+  const { name, cuisines, avgRating, cloudinaryImageId, costForTwo } =
+    resData?.info;
 
   return (
     <div className="w-[200px] ml-6 mt-5 bg-gray-100 p-3 rounded-lg h-80 hover:bg-gray-300">
@@ -28,6 +28,22 @@ const RestaurantCard = (props) => {
       <h4>{costForTwo}</h4>
     </div>
   );
+};
+
+// Higher order component - takes input as a restaurant card component and returns a enhanced component
+
+export const withBestSellerLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="bg-gray-800 text-white absolute m-2 p-2">
+          Best Seller
+        </label>
+
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;
