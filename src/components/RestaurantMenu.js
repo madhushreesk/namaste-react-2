@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import MenuShimmer from "./MenuShimmer";
@@ -9,6 +9,8 @@ const RestaurantMenu = () => {
 
   const resInfo = useRestaurantMenu(resId);
   // console.log("Hook data", resInfo);
+
+  const [showIndex, setShowIndex] = useState(0);
 
   if (resInfo === null) {
     return <MenuShimmer />;
@@ -42,11 +44,14 @@ const RestaurantMenu = () => {
 
       {/* Accordions category */}
 
-      {categories.map((category) => {
+      {categories.map((category, index) => {
+        // controlled component
         return (
           <RestaurantCategory
             key={category?.card?.card?.name}
             data={category?.card?.card}
+            showItems={index === showIndex ? true : false}
+            setShowIndex={() => setShowIndex(index)}
           />
         );
       })}

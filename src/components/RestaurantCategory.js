@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import ItemsList from "./ItemsList";
 
-const RestaurantCategory = ({ data }) => {
-  const [clicked, setClicked] = useState(false);
+const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
+  const handleClick = () => {
+    setShowIndex();
+  };
   return (
     <div>
       <div
         className="w-6/12 mx-auto my-3 h-auto bg-gray-100 shadow-lg p-4 cursor-pointer"
-        onClick={() => setClicked(!clicked)}
+        onClick={handleClick}
       >
         <div className="flex justify-between ">
           <span className="font-bold text-xl">
@@ -15,7 +17,7 @@ const RestaurantCategory = ({ data }) => {
           </span>
           <span className="cursor-pointer">⌄</span>
         </div>
-        {clicked && <ItemsList itemCards={data.itemCards} />}
+        {showItems && <ItemsList itemCards={data.itemCards} />}
       </div>
     </div>
   );
