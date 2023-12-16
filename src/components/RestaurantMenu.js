@@ -10,7 +10,7 @@ const RestaurantMenu = () => {
   const resInfo = useRestaurantMenu(resId);
   // console.log("Hook data", resInfo);
 
-  const [showIndex, setShowIndex] = useState(0);
+  const [showIndex, setShowIndex] = useState(null);
 
   if (resInfo === null) {
     return <MenuShimmer />;

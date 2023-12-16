@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import twiggitoLogo from "../assets/twiggitoLogo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [login, setLogin] = useState("Login");
+
+  const { loggedInUser } = useContext(UserContext);
 
   const onlineStatus = useOnlineStatus();
   return (
@@ -55,6 +58,7 @@ const Header = () => {
           >
             {login}
           </button>
+          <li className="px-4 font-bold">{loggedInUser}</li>
         </ul>
       </div>
     </div>

@@ -1,9 +1,11 @@
 import RestaurantCard, { withBestSellerLabel } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { SWIGGY_RESTAURANT_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   // whenever state variable changes, react triggers a reconciliation cycle(re-renders the component)
@@ -22,7 +24,7 @@ const Body = () => {
     fetchData();
   }, []);
 
-  console.log("list", listOfRestaurant);
+  // console.log("list", listOfRestaurant);
 
   const fetchData = async () => {
     const data = await fetch(SWIGGY_RESTAURANT_API);
@@ -40,6 +42,9 @@ const Body = () => {
 
   const RestaurantBestSeller = withBestSellerLabel(RestaurantCard);
 
+  const { setUserName, loggedInUser } = useContext(UserContext);
+  console.log(setUserName);
+
   const onlineStatus = useOnlineStatus();
 
   if (onlineStatus === false)
@@ -56,7 +61,7 @@ const Body = () => {
       <div className="filter">
         <div className="p-3 ml-4">
           <input
-            className="search-box"
+            className="p-2"
             type="text"
             placeholder="search your favorite dish"
             value={searchText}
@@ -93,6 +98,15 @@ const Body = () => {
         <button className="bg-red-600 px-2 py-4 ml-5 rounded-lg hover:bg-red-500 text-white">
           Total Restaurants : {listOfRestaurant.length}
         </button>
+      </div>
+      <div className="px-5">
+        <label>User Name</label>
+        <input
+          className="border border-black mt-3"
+          type="text"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        />
       </div>
 
       <div className="flex flex-wrap">
