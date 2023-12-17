@@ -3,11 +3,16 @@ import twiggitoLogo from "../assets/twiggitoLogo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [login, setLogin] = useState("Login");
 
   const { loggedInUser } = useContext(UserContext);
+
+  // subscribing to a store using a selector
+
+  const cart = useSelector((store) => store.cart.items);
 
   const onlineStatus = useOnlineStatus();
   return (
@@ -49,7 +54,7 @@ const Header = () => {
               Grocery
             </Link>
           </li>
-          <li className="px-3">Cart</li>
+          <li className="px-3 font-bold text-xl">Cart ({cart.length} items)</li>
           <button
             className="login-button"
             onClick={() => {
