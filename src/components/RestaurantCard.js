@@ -30,7 +30,6 @@ const RestaurantCard = (props) => {
       </h4>
 
       <h4>{costForTwo}</h4>
-      <div className="font-bold">{loggedInUser}</div>
     </div>
   );
 };
