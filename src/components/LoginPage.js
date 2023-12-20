@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import spagetti from "../assets/spagetti.png";
 
 const LoginPage = () => {
   return (
@@ -13,7 +14,9 @@ const LoginPage = () => {
           </button>
         </Link>
       </div>
-      <div className="bg-red-500 w-4/12"></div>
+      <div className="bg-red-500 w-4/12 flex justify-center items-center">
+        <img src={spagetti} className="absolute" />
+      </div>
     </div>
   );
 };

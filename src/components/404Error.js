@@ -4,6 +4,8 @@ import React from "react";
 const Error404 = () => {
   const err = useRouteError();
 
+  console.log(err);
+
   return (
     <div>
       <h1>OOPS!!!</h1>

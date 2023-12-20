@@ -19,7 +19,9 @@ const Footer = () => {
           alt="appStoreIcon"
         />
       </div>
-      <div className="bg-black w-full h-64"></div>
+      <div className="bg-black w-full h-28 text-gray-300 text-lg flex justify-center items-center">
+        Made with ❤️ by Madhushri S.K
+      </div>
     </div>
   );
 };

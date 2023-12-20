@@ -18,7 +18,7 @@ const RestaurantCard = (props) => {
         alt="res-logo"
       />
       <h2 className="mt-2 text-lg">
-        <strong>{name}</strong>
+        <strong>{name?.length > 20 ? name?.slice(0, 18) : name}</strong>
       </h2>
       <h4>
         {cuisines?.slice(0, 3).join(", ")}
