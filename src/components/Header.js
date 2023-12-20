@@ -18,57 +18,53 @@ const Header = () => {
   return (
     <div className="flex justify-between items-center p-15 bg-white shadow-md transition-shadow duration-300 ease-linear hover:shadow-lg">
       <div className="logo-container">
-        <Link to="/">
+        <Link to="/home">
           <img className="m-10 w-52" src={twiggitoLogo} alt="twiggito logo" />
         </Link>
       </div>
 
       <div className="flex items-center">
         <ul className="flex p-5 m-4">
-          <li className="px-3">
-            Online Status : {onlineStatus ? "✅" : "🔴"}{" "}
+          <li className="px-3 text-xl">
+            Online Status : {onlineStatus ? "🛜" : "🔴"}
           </li>
           <li className="px-3">
-            <Link style={{ textDecoration: "none", color: "#000" }} to="/">
+            <Link
+              style={{ textDecoration: "none", color: "#000" }}
+              className="text-xl text-black"
+              to="/home"
+            >
               Home
             </Link>
           </li>
           <li className="px-3">
-            <Link style={{ textDecoration: "none", color: "#000" }} to="/about">
+            <Link
+              style={{ textDecoration: "none" }}
+              className="text-xl text-black"
+              to="/about"
+            >
               About Us
             </Link>
           </li>
           <li className="px-3">
             <Link
+              className="text-xl text-black"
               style={{ textDecoration: "none", color: "#000" }}
               to="/contact"
             >
               Contact Us
             </Link>
           </li>
-          <li className="px-3">
-            <Link
-              style={{ textDecoration: "none", color: "#000" }}
-              to="/grocery"
-            >
-              Grocery
-            </Link>
-          </li>
+
           <Link to="/cart">
-            <li className="px-3 font-bold text-xl">
-              Cart ({cart.length} items)
-            </li>
+            <li className="px-4 font-bold text-xl">Cart ({cart.length})</li>
           </Link>
 
-          <button
-            className="login-button"
-            onClick={() => {
-              login === "Login" ? setLogin("Logout") : setLogin("Login");
-            }}
-          >
-            {login}
-          </button>
-          <li className="px-4 font-bold">{loggedInUser}</li>
+          <Link to="/">
+            <button className="bg-red-500 text-white text-lg flex justify-between px-3 py-2 rounded-lg hover:bg-red-600">
+              Logout
+            </button>
+          </Link>
         </ul>
       </div>
     </div>

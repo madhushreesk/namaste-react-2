@@ -6,6 +6,7 @@ import { SWIGGY_RESTAURANT_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 import UserContext from "../utils/UserContext";
+import Footer from "./Footer";
 
 const Body = () => {
   // whenever state variable changes, react triggers a reconciliation cycle(re-renders the component)
@@ -42,7 +43,7 @@ const Body = () => {
 
   const RestaurantBestSeller = withBestSellerLabel(RestaurantCard);
 
-  const { setUserName, loggedInUser } = useContext(UserContext);
+  const { setUserName } = useContext(UserContext);
   console.log(setUserName);
 
   const onlineStatus = useOnlineStatus();
@@ -61,14 +62,20 @@ const Body = () => {
       <div className="filter">
         <div className="p-3 ml-4">
           <input
-            className="p-2"
+            className="px-7 py-2 rounded-lg focus:border-b-2 focus:border-gray-200 focus:outline-none"
             type="text"
-            placeholder="search your favorite dish"
+            placeholder="🔍  Search..."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleSearch();
+              }
+            }}
           />
+
           <button
-            className="bg-red-500 px-1 py-3 m-2 rounded-lg hover:bg-red-600 text-white"
+            className="bg-red-500 px-5 py-2 m-2 rounded-lg hover:bg-red-600 text-white"
             onClick={() => {
               const filteredSearch = originalListOfRestaurant.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -80,7 +87,7 @@ const Body = () => {
           </button>
 
           <button
-            className="bg-red-500 px-1 py-3 m-2 rounded-lg hover:bg-red-600 text-white"
+            className="bg-red-500 px-5 py-2 m-2 rounded-lg hover:bg-red-600 text-white"
             onClick={() => {
               setListOfRestaurant(originalListOfRestaurant);
               setSearchText("");
@@ -99,7 +106,7 @@ const Body = () => {
           Total Restaurants : {listOfRestaurant.length}
         </button>
       </div>
-      <div className="px-5">
+      {/* <div className="px-5">
         <label>User Name</label>
         <input
           className="border border-black mt-3"
@@ -107,7 +114,7 @@ const Body = () => {
           value={loggedInUser}
           onChange={(e) => setUserName(e.target.value)}
         />
-      </div>
+      </div> */}
 
       <div className="flex flex-wrap">
         {listOfRestaurant.map((resData) => (
@@ -124,6 +131,7 @@ const Body = () => {
           </Link>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
