@@ -115,8 +115,8 @@ const Body = () => {
           onChange={(e) => setUserName(e.target.value)}
         />
       </div> */}
-
-      <div className="flex flex-wrap">
+      <div className="font-bold text-2xl ml-5 mt-5">What's on your mind?</div>
+      <div className="flex flex-wrap justify-center items-center">
         {listOfRestaurant.map((resData) => (
           <Link
             key={resData.info.id}
