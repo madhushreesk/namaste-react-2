@@ -1,14 +1,10 @@
-import { useContext, useState } from "react";
-import twiggitoLogo from "../assets/twiggitoLogo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import twiggitoLogo from "../assets/twiggitoLogo.png";
 
 const Header = () => {
-  const [login, setLogin] = useState("Login");
-
-  const { loggedInUser } = useContext(UserContext);
+  // const { loggedInUser } = useContext(UserContext);
 
   // subscribing to a store using a selector
 

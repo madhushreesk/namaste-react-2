@@ -25,26 +25,22 @@ const Body = () => {
     fetchData();
   }, []);
 
-  // console.log("list", listOfRestaurant);
-
   const fetchData = async () => {
     const data = await fetch(SWIGGY_RESTAURANT_API);
 
     const json = await data.json();
     const restaurants =
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || [];
 
     setOriginalListOfRestaurant(restaurants);
     setListOfRestaurant(restaurants);
-
-    // console.log("Res data", restaurants);
+    console.log("api response", json);
   };
 
   const RestaurantBestSeller = withBestSellerLabel(RestaurantCard);
 
   const { setUserName } = useContext(UserContext);
-  console.log(setUserName);
 
   const onlineStatus = useOnlineStatus();
 
@@ -73,7 +69,6 @@ const Body = () => {
               }
             }}
           />
-
           <button
             className="bg-red-500 px-5 py-2 m-2 rounded-lg hover:bg-red-600 text-white"
             onClick={() => {
@@ -85,7 +80,6 @@ const Body = () => {
           >
             Search
           </button>
-
           <button
             className="bg-red-500 px-5 py-2 m-2 rounded-lg hover:bg-red-600 text-white"
             onClick={() => {

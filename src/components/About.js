@@ -7,10 +7,8 @@ class About extends React.Component {
   }
 
   render() {
-    console.log("Parent render");
     return (
       <div className="flex justify-center items-center">
-        {/* <UserClass name={"Madhushri about class"} location={"Belgaum, India"} /> */}
         <div className="w-[600px] ml-6 mt-5 bg-gray-100 p-3 rounded-lg h-[500px] hover:bg-red-100 shadow-md m-3">
           <div className="flex justify-center text-3xl font-bold">
             Twiggito!
@@ -32,7 +30,7 @@ class About extends React.Component {
           </p>
           <Link to="/home">
             <div className="flex justify-center items-center">
-              <button className="p-3 mt-3 bg-red-500 text-white rounded-lg hover:bg-red-600">
+              <button className="p-3 mt-3 bg-red-500 text-white rounded-lg hover:bg-red-300">
                 Start Ordering
               </button>
             </div>
